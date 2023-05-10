@@ -1,0 +1,31 @@
+#Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. 
+#You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. 
+#You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
+
+#Create sports_store database
+CREATE TABLE sports_store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, aisle INTEGER, sold INTEGER);
+
+INSERT INTO sports_store VALUES (1, "Baseballs", 5, 1, 25);
+INSERT INTO sports_store VALUES (2, "Footballs", 10, 2, 30);
+INSERT INTO sports_store VALUES (3, "Basketballs", 10, 3, 20);
+INSERT INTO sports_store VALUES (4, "Soccer Balls", 12, 4, 35);
+INSERT INTO sports_store VALUES (5, "Golf Balls", 5, 5, 15);
+INSERT INTO sports_store VALUES (6, "Softballs", 5, 6, 25);
+INSERT INTO sports_store VALUES (7, "Tennis Balls", 5, 7, 15);
+INSERT INTO sports_store VALUES (8, "Hockey Pucks", 8, 8, 10);
+INSERT INTO sports_store VALUES (9, "Baseball Bats", 50, 1, 10);
+INSERT INTO sports_store VALUES (10, "Cleats", 50, 10, 80);
+INSERT INTO sports_store VALUES (11, "Basketball Hoops", 100, 3, 5);
+INSERT INTO sports_store VALUES (12, "Golf Clubs", 100, 5, 4);
+INSERT INTO sports_store VALUES (13, "Tennis Rackets", 50, 7, 20);
+INSERT INTO sports_store VALUES (14, "Hockey Sticks", 50, 8, 10);
+INSERT INTO sports_store VALUES (15, "Weights", 40, 12, 30);
+
+#display the sum of all items sold
+SELECT SUM (sold) FROM sports_store;
+
+#display the table
+SELECT * FROM sports_store;
+
+#display the table ordered by aisles
+SELECT * from sports_store ORDER BY aisle asc;
