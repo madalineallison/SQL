@@ -1,0 +1,30 @@
+/*In this project, you’re going to make your own table with some small set of “famous people”, then make more tables about things 
+they do and join those to create nice human readable lists.*/
+
+/* Create table about the people and what they do here */
+
+CREATE TABLE athletes (id INTEGER PRIMARY KEY, name TEXT, age INTEGER);
+INSERT INTO athletes VALUES (1, "Serena Williams", 35);
+INSERT INTO athletes VALUES (2, "Bryce Harper", 30);
+INSERT INTO athletes VALUES (3, "Joe Burrow", 25);
+INSERT INTO athletes VALUES (4, "Lebron James", 37);
+INSERT INTO athletes VALUES (5, "Tiger Woods", 45);
+INSERT INTO athletes VALUES (6, "Simone Biles", 23);
+INSERT INTO athletes VALUES (7, "Shoehi Ohtani", 24);
+INSERT INTO athletes VALUES (8, "Joel Embiid", 31);
+
+CREATE TABLE sports (id INTEGER PRIMARY KEY, athlete_id INTEGER, sport_name TEXT);
+INSERT INTO sports VALUES (1, 1, "Tennis");
+INSERT INTO sports VALUES (2, 2, "Baseball");
+INSERT INTO sports VALUES (3, 3, "Football");
+INSERT INTO sports VALUES (4, 4, "Basketball");
+INSERT INTO sports VALUES (5, 5, "Golf");
+INSERT INTO sports VALUES (6, 6, "Gymnastics");
+INSERT INTO sports VALUES (7, 7, "Baseball");
+INSERT INTO sports VALUES (8, 8, "Basketball");
+
+SELECT * FROM athletes, sports;
+
+SELECT athletes.name, sports.sport_name FROM athletes JOIN sports ON athletes.id = sports.athlete_id;
+
+SELECT athletes.name FROM athletes JOIN sports ON athletes.id = sports.athlete_id WHERE sports.sport_name = "Baseball";
