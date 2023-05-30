@@ -38,10 +38,20 @@ avg(energy)
 FROM BIT_DB.Spotifydata
 GROUP BY artist_name, track_name;
 
-#Then I determined who the Top 10 artists are by popularitySELECT 
+#Then I determined who the Top 10 artists are by popularity.
+SELECT 
 track_name,
 artist_name,
 popularity
 FROM BIT_DB.Spotifydata
 ORDER BY popularity desc
 LIMIT 10;
+
+#Then I ordered the songs by louness and found the duration of each song in minutes, rather than miliseconds.
+SELECT
+artist_name,
+track_name,
+loudness,
+(duration_ms/1000)/60 as duration_minutes
+FROM BIT_DB.Spotifydata
+ORDER BY loudness desc;
